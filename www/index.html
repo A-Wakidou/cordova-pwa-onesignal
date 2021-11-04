@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="manifest" href="manifest.json" />
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+        crossorigin="anonymous"
+      />
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"
+      ></script>
+        <script>
+            window.addEventListener("load", () => {
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker
+                    .register("sw.js", { scope: "./" })
+                    .then(function (reg) {});
+                }
+            })
+        </script>
+        <title>Web Mobile Projet N°1</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Web Mobile Projet N°1</h1>
+            <!--<div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>-->
+            <div id="creation" class="creation">
+                <h2 class="my-5">Création d'un top 5</h2>
+                <form id="form">
+                    <div class=" my-2 py-2 shadow">
+                        <label for="title">Nom du top</label>
+                        <input id="titleInput" type="text" name="title">
+                        <label for="url">URL image du top</label>
+                        <input id="urlInput" type="text" name="url">
+                    </div>
+                    <div>
+                        <label for="title1">Titre top 1</label>
+                        <input id="titleInput1" type="text" name="title1">
+                        <label for="url1">URL Image</label>
+                        <input id="urlInput1" type="text" name="url1">
+                    </div>
+                    <div>
+                        <label for="title2">Titre top 2</label>
+                        <input id="titleInput2" type="text" name="title2">
+                        <label for="url2">URL Image</label>
+                        <input id="urlInput2" type="text" name="url2">
+                    </div>
+                    <div>
+                        <label for="title3">Titre top 3</label>
+                        <input id="titleInput3" type="text" name="title3">
+                        <label for="url3">URL Image</label>
+                        <input id="urlInput3" type="text" name="url3">
+                    </div>
+
+                    <div>
+                        <label for="title4">Titre top 4</label>
+                        <input id="titleInput4" type="text" name="title4">
+                        <label for="url4">URL Image</label>
+                        <input id="urlInput4" type="text" name="url4">
+                    </div>
+
+                    <div>
+                        <label for="title5">Titre top 5</label>
+                        <input id="titleInput5" type="text" name="title5">
+                        <label for="url5">URL Image</label>
+                        <input id="urlInput5" type="text" name="url5">
+                    </div>
+
+                    <button type="button" id="formSubmit" class="btn btn-dark my-3">Valider</button>
+
+                </form>
+                <button id="creationBackButton" class="btn btn-danger my-3">Back <img src="./img/logos/arrow-left-white.svg" alt=""></button>
+            </div>
+            <div id="tops" class="tops">
+                <h2 class="my-5">Liste des tops</h2>
+                <div id="topList" class="d-flex justify-content-center">
+                </div>
+                <button id="add" class="btn btn-danger my-3">Ajouter un top <img src="./img/logos/add.svg" alt="Ajouter top"></button>
+            </div>
+            <div id="top-infos" class="top-infos">
+                <h2 id="titleSelectedTop"></h2>
+                <div id="top-infos-list" class="top-infos-list d-flex justify-content-center my-5"></div>
+                <button id="topinfosBackButton" class="btn btn-danger my-3">Back <img src="./img/logos/arrow-left-white.svg" alt=""></button>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

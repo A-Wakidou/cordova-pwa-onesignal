@@ -1,0 +1,24 @@
+{
+  "name": "Web mobile Projet N°1",
+  "short_name": "WMP1",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffff",
+  "icons": [
+    {
+      "src": "img/toplogo50x50.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "img/toplogo144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ]
+}
