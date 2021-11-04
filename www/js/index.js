@@ -19,7 +19,23 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', onDeviceReady, false)
+function onBatteryStatus(status) {
+    //Battery
+    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+    var batteryStatus
+    if(status.isPlugged == true) {
+        batteryStatus = 'En charge'
+    }
+    else {
+        batteryStatus = 'Non branché'
+    }
+    var batteryDiv = document.getElementById('battery')
+    batteryDiv.innerHTML = `Batterie : ${status.level}% | ${batteryStatus}`
+    //StatusBar
+    console.log(StatusBar)
+}
+
 var selectedTopData = ''
 if(localStorage.topDatas) {
     var topData = JSON.parse(localStorage.getItem('topDatas'))
@@ -119,5 +135,6 @@ function add() {
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    window.addEventListener("batterystatus", onBatteryStatus, false);
     //document.getElementById('deviceready').classList.add('ready');
 }

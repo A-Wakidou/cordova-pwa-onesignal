@@ -50,16 +50,26 @@
             window.addEventListener("load", () => {
                 if ("serviceWorker" in navigator) {
                     navigator.serviceWorker
-                    .register("sw.js", { scope: "./" })
+                    .register("/sw.js", { scope: "/" })
                     .then(function (reg) {});
                 }
             })
+        </script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "214cc036-f067-47a3-a716-f07be9e31f23",
+            });
+          });
         </script>
         <title>Web Mobile Projet N°1</title>
     </head>
     <body>
         <div class="app">
             <h1>Web Mobile Projet N°1</h1>
+            <div id="battery"></div>
             <!--<div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
