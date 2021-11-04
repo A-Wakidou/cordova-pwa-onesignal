@@ -1,8 +1,8 @@
 # WebMobileProjet1
 
-(Master)
-1 -> npm i
-2 -> cd /www
-3 -> cordova platform add browser
-4 -> cordova build browser
-5 -> cordova emulate browser
+## (Master)
+* npm i
+* -> cd /www
+* -> cordova platform add browser
+* -> cordova build browser
+* -> cordova emulate browser
